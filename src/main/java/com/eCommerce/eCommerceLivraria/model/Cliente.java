@@ -35,6 +35,10 @@ public class Cliente implements Serializable {
     @Column(length = 150)
     private String telefone;
 
+    @NotNull
+    @Column(length = 8)
+    private String senha;
+
 
     @OneToOne
     @JoinColumn(name = "id_endereco")
@@ -102,5 +106,13 @@ public class Cliente implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
