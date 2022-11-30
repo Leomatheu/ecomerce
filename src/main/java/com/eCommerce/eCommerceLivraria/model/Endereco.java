@@ -27,7 +27,6 @@ public class Endereco implements Serializable {
     @Column(length = 70)
     private String estado;
 
-    @NotNull
     @Column(length = 50)
     private String complemento;
 

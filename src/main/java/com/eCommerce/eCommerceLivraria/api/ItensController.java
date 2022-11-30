@@ -19,7 +19,7 @@ public class ItensController implements Serializable {
     ItensRepository repository;
 
     @GetMapping
-    public List<Itens> getAllCor() {
+    public List<Itens> getAllItens() {
         return repository.findAll();
     }
 

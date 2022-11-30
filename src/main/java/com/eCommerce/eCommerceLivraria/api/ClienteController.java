@@ -1,6 +1,7 @@
 package com.eCommerce.eCommerceLivraria.api;
 
 import com.eCommerce.eCommerceLivraria.model.Cliente;
+import com.eCommerce.eCommerceLivraria.model.Produto;
 import com.eCommerce.eCommerceLivraria.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class ClienteController {
 
 
     @GetMapping
-    public List<Cliente> getAllCor() {
+    public List<Cliente> getAllClientes() {
         return repository.findAll();
     }
 
@@ -53,6 +54,12 @@ public class ClienteController {
         repository.deleteById(id);
         return ResponseEntity.ok().build();
 
+    }
+
+    @GetMapping
+    @RequestMapping("/cliente-email/{email}")
+    public List<Cliente> findEmailSenha(@PathVariable("email") String emailCliente) {
+        return repository.findEmailSenha(emailCliente);
     }
 
 }

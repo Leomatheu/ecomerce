@@ -20,7 +20,7 @@ public class CategoriaController {
     CategoriaRepository repository;
 
     @GetMapping
-    public List<Categoria> getAllCor() {
+    public List<Categoria> getAllCategoria() {
         return repository.findAll();
     }
 

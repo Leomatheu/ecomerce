@@ -53,4 +53,12 @@ public class ProdutoController {
 
     }
 
+    @GetMapping
+    @RequestMapping("/produto-categoria/{id}")
+    public List<Produto> findSelectPorMarca(@PathVariable("id") Long categoriaId) {
+        return repository.findSelectPorMarca(categoriaId);
+    }
+
+
+
 }

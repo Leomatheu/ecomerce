@@ -29,6 +29,23 @@ public class Produto implements Serializable {
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
 
+    private String foto;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
 
     public Long getId() {
         return id;
