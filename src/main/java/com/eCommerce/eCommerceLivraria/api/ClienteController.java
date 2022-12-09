@@ -39,7 +39,7 @@ public class ClienteController {
     public ResponseEntity save(@RequestBody Cliente cliente) {
         repository.save(cliente);
 
-        return ResponseEntity.badRequest().body("Salvo com sucesso !");
+        return ResponseEntity.ok().body("Salvo com sucesso !");
     }
 
     @PutMapping("/{id}")

@@ -16,7 +16,7 @@ public class Compra implements Serializable {
     @Column(length = 10)
     private double valor;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.PERSIST)
     private List<Itens> itens;
 
     @ManyToOne

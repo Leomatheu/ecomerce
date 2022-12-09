@@ -24,7 +24,7 @@ public class EnderecoController {
     public ResponseEntity save(@RequestBody Endereco endereco) {
         repository.save(endereco);
 
-        return ResponseEntity.badRequest().body("Salvo com sucesso !");
+        return ResponseEntity.ok().body("Salvo com sucesso !");
     }
 
     @PutMapping("/{id}")

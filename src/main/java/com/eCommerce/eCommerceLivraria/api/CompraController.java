@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -21,9 +22,11 @@ public class CompraController {
 
     @PostMapping
     public ResponseEntity save(@RequestBody Compra compra) {
-        repository.save(compra);
 
-        return ResponseEntity.badRequest().body("Salvo com sucesso !");
+        compra.getItens().forEach(i -> i.setCompra(compra));
+        repository.save(compra);
+        System.out.println(compra);
+        return ResponseEntity.ok().body("Salvo com sucesso !");
     }
 
     @PutMapping("/{id}")
